@@ -3,7 +3,7 @@ Deep Learning model for feature extractions from cloth images and its applicatio
 
 ## Table of contents
 * [Dataset](#dataset)
-* [Technologies](#technologies)
+* [Proposed architecture](#proposed-architecture)
 * [Setup](#setup)
 
 ## Dataset: 
