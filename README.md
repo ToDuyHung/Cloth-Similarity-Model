@@ -2,7 +2,12 @@
 
 Dataset: https://drive.google.com/file/d/10e2jCu5CS7VrgNPQBzsN9U0erd4Zwr5q/view?usp=sharing
 
-![Cloth Model Architecture](git_img/Cloth Model.png)
+<p align="center">
+  <img align="center" src="git_img/Cloth Model.png" />
+</p>
+<p align="center">
+  <b>Figure 1:</b> ColBERT's late interaction, efficiently scoring the fine-grained similarity between a queries and a passage.
+</p>
 
 crop_images: dataset for training backbone model
 
