@@ -5,7 +5,7 @@ import os
 import glob
 from tqdm import tqdm
 # ------------------------------------------ Create crop batch dataset --------------------------------------
-theme_ls = glob.glob('/AIHCM/ComputerVision/hungtd/fashion-dataset/theme/*.jpg')
+theme_ls = glob.glob('theme/*.jpg')
 # print(np.random.choice(theme_ls))
 def read_and_add_noise(img):
     h, w, c = img.shape
@@ -20,10 +20,10 @@ def read_and_add_noise(img):
     img = np.where(a, background, img)
     return img
 
-crop_path = '/AIHCM/ComputerVision/hungtd/fashion-dataset/crop_images'
-X_train = pd.read_csv('/AIHCM/ComputerVision/hungtd/fashion-dataset/datacsv/X_train.csv')
-X_val = pd.read_csv('/AIHCM/ComputerVision/hungtd/fashion-dataset/datacsv/X_val.csv')
-X_test = pd.read_csv('/AIHCM/ComputerVision/hungtd/fashion-dataset/datacsv/X_test.csv')
+crop_path = 'crop_images'
+X_train = pd.read_csv('datacsv/X_train.csv')
+X_val = pd.read_csv('datacsv/X_val.csv')
+X_test = pd.read_csv('datacsv/X_test.csv')
 
 for X in [X_train, X_val, X_test]:
     for fname in tqdm(X.fname):
@@ -36,6 +36,6 @@ for X in [X_train, X_val, X_test]:
         # break
     
 # ------------------------------------------ Inference -----------------------------------------------------
-# img_dict = {'a.jpg': cv2.resize(cv2.imread('/AIHCM/ComputerVision/hungtd/fashion-dataset/b.png'), (240,320))}
+# img_dict = {'a.jpg': cv2.resize(cv2.imread('b.png'), (240,320))}
 # result_dict = crop_batch(img_dict)
-# cv2.imwrite('/AIHCM/ComputerVision/hungtd/fashion-dataset/a.jpg', result_dict['a.jpg'][1])
+# cv2.imwrite('a.jpg', result_dict['a.jpg'][1])

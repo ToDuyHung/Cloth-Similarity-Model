@@ -17,11 +17,11 @@ from DataModule import DataModule
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
 os.environ["CUDA_VISIBLE_DEVICES"]="2"
 
-datamodule = DataModule(data_path='/AIHCM/ComputerVision/hungtd/fashion-dataset/datacsv', img_size = 224)
+datamodule = DataModule(data_path='datacsv', img_size = 224)
 datamodule.setup()
 
-# model_path = "/AIHCM/ComputerVision/hungtd/fashion-dataset/pytorch_model/"
-model_path = "/AIHCM/ComputerVision/hungtd/fashion-dataset/crop_pytorch_model/"
+# model_path = "pytorch_model/"
+model_path = "crop_pytorch_model/"
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model = torch.load(model_path + "best_model.pth", map_location=device)
 config = json.load(open(model_path + "config.json", "r"))
@@ -91,8 +91,8 @@ def extract_features(img, img_size=224):
         return output_article[3].detach().cpu().numpy(), output_color[3].detach().cpu().numpy()
         # return torch.add(output_article[3], output_color[3]*4)
 
-PATH1 = '/AIHCM/ComputerVision/hungtd/fashion-dataset/image_2022_04_21T04_41_03_951Z.png'
-PATH2 = '/AIHCM/ComputerVision/hungtd/fashion-dataset/b.png'
+PATH1 = 'image_2022_04_21T04_41_03_951Z.png'
+PATH2 = 'b.png'
 
 # vector1, vector1_1 = extract_features(PATH1)
 # vector2, vector2_1 = extract_features(PATH2)

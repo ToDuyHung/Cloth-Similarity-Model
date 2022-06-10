@@ -143,15 +143,15 @@ class TripletCombineInference:
           
           
 if __name__=='__main__':
-  model_path = '/AIHCM/ComputerVision/hungtd/fashion-dataset/crop_pytorch_model/'
-  # inference = Inference(model_path="/AIHCM/ComputerVision/hungtd/fashion-dataset/crop_pytorch_model/")
+  model_path = 'crop_pytorch_model/'
+  # inference = Inference(model_path="crop_pytorch_model/")
 
-  classifier_path = '/AIHCM/ComputerVision/hungtd/fashion-dataset/triplet_model/'
-  # csv_path = '/AIHCM/ComputerVision/hungtd/fashion-dataset/datacsv'
+  classifier_path = 'triplet_model/'
+  # csv_path = 'datacsv'
 
   # classifier = torch.load(classifier_path + "best_model.pth", map_location='cpu')
   # classifier.eval()
-  # df = pd.read_csv('/AIHCM/ComputerVision/hungtd/fashion-dataset/datacsv/triplet_test.csv')
+  # df = pd.read_csv('datacsv/triplet_test.csv')
   # anchor = df.anchor.to_list()
   # possitive = df.positive.to_list()
   # negative = df.negative.to_list()
@@ -188,12 +188,12 @@ if __name__=='__main__':
   #     result['negative'].append(euclid_dis)
   #     # break
   #   res_df = pd.DataFrame.from_dict(result)
-  #   db_path = '/AIHCM/ComputerVision/hungtd/fashion-dataset/datacsv'
+  #   db_path = 'datacsv'
   #   res_df.to_csv(os.path.join(db_path, 'distance.csv'),index=False)
   #   print(res_df.describe())
   #   break
   cloth_model = TripletCombineInference(model_path=model_path, classifier_path=classifier_path)
-  image1 = "/AIHCM/ComputerVision/hungtd/fashion-dataset/last_val_data/anchor/62.jpg"
-  image2 = "/AIHCM/ComputerVision/hungtd/fashion-dataset/last_val_data/negative/62 (3).jpg"
+  image1 = "last_val_data/anchor/62.jpg"
+  image2 = "last_val_data/negative/62 (3).jpg"
   print(cloth_model.compare(image1, image2))
     

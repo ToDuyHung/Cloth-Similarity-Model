@@ -16,7 +16,7 @@ import torch.backends.cudnn as cudnn
 import pandas as pd
 import sys
 cwd = os.getcwd()
-sys.path.append('/AIHCM/ComputerVision/hungtd/fashion-dataset/models')
+sys.path.append('models')
 from yolov5.models.experimental import attempt_load
 from yolov5.utils.datasets import LoadImages
 from yolov5.utils.general import check_img_size, check_suffix, non_max_suppression, scale_coords, set_logging
@@ -67,7 +67,7 @@ def load_yolo_model(weights=ROOT + '/yolov5s.pt',  # model.pt path(s)
         if half:
             model.half()  # to FP16
     return model, stride, half, device
-model_yolo_crop, stride, half, device = load_yolo_model(weights=r"/AIHCM/ComputerVision/hungtd/fashion-dataset/models/yolov5/yolov5s.pt", device='cpu')
+model_yolo_crop, stride, half, device = load_yolo_model(weights=r"models/yolov5/yolov5s.pt", device='cpu')
 
 def bbox(source='test2', conf_thres=0.2, imgsz=416):
     pt, max_det, iou_thres = True, 1000, 0.45

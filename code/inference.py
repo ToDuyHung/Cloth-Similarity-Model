@@ -168,18 +168,18 @@ class Inference:
           
           
 if __name__=='__main__':
-  model_path = '/AIHCM/ComputerVision/hungtd/fashion-dataset/crop_pytorch_model/'
-  inference = Inference(model_path="/AIHCM/ComputerVision/hungtd/fashion-dataset/crop_pytorch_model/")
-  # inference.gen_db(dataset_path="/AIHCM/ComputerVision/hungtd/fashion-dataset/Hume_data_full")
-  path1 = '/AIHCM/ComputerVision/hungtd/fashion-dataset/test_imgs/1.png'
-  path2 = '/AIHCM/ComputerVision/hungtd/fashion-dataset/test_imgs/2.png'
+  model_path = 'crop_pytorch_model/'
+  inference = Inference(model_path="crop_pytorch_model/")
+  # inference.gen_db(dataset_path="Hume_data_full")
+  path1 = 'test_imgs/1.png'
+  path2 = 'test_imgs/2.png'
   img_dict = {0: cv2.resize(cv2.imread(path1), (240,320)) ,\
               1: cv2.resize(cv2.imread(path2), (240,320))}
   result_dict = crop_batch(img_dict)
-  cv2.imwrite('/AIHCM/ComputerVision/hungtd/fashion-dataset/test_imgs/test1.jpg', result_dict[0][1])
-  cv2.imwrite('/AIHCM/ComputerVision/hungtd/fashion-dataset/test_imgs/test2.jpg', result_dict[1][1])
+  cv2.imwrite('test_imgs/test1.jpg', result_dict[0][1])
+  cv2.imwrite('test_imgs/test2.jpg', result_dict[1][1])
   img1, img2 = result_dict[0][1], result_dict[1][1]
   # list_len, list_id, index = inference.load_db()
-  # print(inference.identification(img_file= '/AIHCM/ComputerVision/hungtd/fashion-dataset/Hume_data_full/Đầm body lưới - D004 - Đen - S,M,L/6a38781c89a777f92eb6.jpg', list_len=list_len, list_id=list_id, index=index))
+  # print(inference.identification(img_file= 'Hume_data_full/Đầm body lưới - D004 - Đen - S,M,L/6a38781c89a777f92eb6.jpg', list_len=list_len, list_id=list_id, index=index))
   print(inference.compare(img1, img2))
   

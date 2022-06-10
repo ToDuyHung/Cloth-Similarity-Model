@@ -11,8 +11,8 @@ from torch.utils.data import Dataset
 import cv2
 # from model_utils import crop_batch
 
-# model_path = '/AIHCM/ComputerVision/hungtd/fashion-dataset/crop_pytorch_model/'
-# inference = Inference(model_path="/AIHCM/ComputerVision/hungtd/fashion-dataset/crop_pytorch_model/")
+# model_path = 'crop_pytorch_model/'
+# inference = Inference(model_path="crop_pytorch_model/")
 
 class NewDataset(Dataset):
     def __init__(self, X, transform=None):

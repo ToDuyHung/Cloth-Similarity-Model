@@ -2,13 +2,13 @@ import pandas as pd
 import glob
 from sklearn.model_selection import train_test_split
 
-raw_data_df = pd.read_csv('/AIHCM/ComputerVision/hungtd/fashion-dataset/styles.csv')
+raw_data_df = pd.read_csv('styles.csv')
 # print(raw_data_df.head())
 
 labels_df = raw_data_df[['id', 'subCategory', 'articleType', 'baseColour']]
 labels_df = labels_df.dropna()
 labels_df = labels_df[(labels_df['subCategory'] =='Topwear') | (labels_df['subCategory'] == 'Bottomwear') | (labels_df['subCategory'] == 'Dress')]
-image_base_dir = '/AIHCM/ComputerVision/hungtd/fashion-dataset/crop_images'
+image_base_dir = 'crop_images'
 image_fnames = [f for f in glob.glob(image_base_dir + "**/*.jpg", recursive=True)]
 print(11111111111, len(image_fnames))
 image_ids = [int(f.split('/')[-1][:-4]) for f in image_fnames]
@@ -55,7 +55,7 @@ y_test = y_test.reset_index(drop=True)
 
 print(X_train)
 
-new_folder = '/AIHCM/ComputerVision/hungtd/fashion-dataset/datacsv/'
+new_folder = 'datacsv/'
 X_train.to_csv(new_folder + 'X_train.csv')
 X_test.to_csv(new_folder + 'X_test.csv')
 X_val.to_csv(new_folder + 'X_val.csv')

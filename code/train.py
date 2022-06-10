@@ -5,7 +5,7 @@ from TorchVisionClassifierTrainer import TorchVisionClassifierTrainer
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
 os.environ["CUDA_VISIBLE_DEVICES"]="2"
 
-datamodule = DataModule(data_path='/AIHCM/ComputerVision/hungtd/fashion-dataset/datacsv', img_size = 224)
+datamodule = DataModule(data_path='datacsv', img_size = 224)
 datamodule.setup()
 
 # Test
@@ -19,7 +19,7 @@ print(id2baseColour)
 
 
 trainer = TorchVisionClassifierTrainer(
-	output_dir   = "/AIHCM/ComputerVision/hungtd/fashion-dataset/crop_pytorch_model/",
+	output_dir   = "crop_pytorch_model/",
 	model_name   = 'resnet50',
 	train      	 = train,
 	test      	 = test,
