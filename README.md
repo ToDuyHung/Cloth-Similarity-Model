@@ -16,13 +16,15 @@ Dataset, which includes raw images and pretrained model, used in this project is
 
 * last_val_data: dataset for triplet validation
 
-* crop_pytorch_model: backbone model
+* crop_pytorch_model: pretrained backbone model
 
-* models: yolo crop model
+* models: pretrained yolo crop model
 
-* triplet_model: classifier model training by triplet_loss
+* triplet_model: pretrained classifier model training by triplet_loss
 
 ## Proposed architecture
+
+* Version 1: I call it "backbone model" because it will be re-used as the backbone for model version 2.0. This is the model architecture:
 
 <p align="center">
   <img align="center" src="git_img/Cloth Model.png" />
