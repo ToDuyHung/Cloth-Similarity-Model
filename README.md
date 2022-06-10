@@ -2,7 +2,7 @@
 
 Dataset: https://drive.google.com/file/d/10e2jCu5CS7VrgNPQBzsN9U0erd4Zwr5q/view?usp=sharing
 
-![Cloth Model Architecture](Cloth-Similarity-Model/git_img/Cloth Model.png)
+![Cloth Model Architecture](git_img/Cloth Model.png)
 
 crop_images: dataset for training backbone model
 
