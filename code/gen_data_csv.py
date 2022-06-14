@@ -10,7 +10,6 @@ labels_df = labels_df.dropna()
 labels_df = labels_df[(labels_df['subCategory'] =='Topwear') | (labels_df['subCategory'] == 'Bottomwear') | (labels_df['subCategory'] == 'Dress')]
 image_base_dir = 'crop_images'
 image_fnames = [f for f in glob.glob(image_base_dir + "**/*.jpg", recursive=True)]
-print(11111111111, len(image_fnames))
 image_ids = [int(f.split('/')[-1][:-4]) for f in image_fnames]
 image_ids_df = pd.DataFrame({'id':image_ids,'fname':image_fnames}, index=None)
 labels_df = labels_df.merge(image_ids_df, how='inner', on='id')

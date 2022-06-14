@@ -1,0 +1,18 @@
+### Model ###
+models/
+model/
+misc/
+
+### VS Code ###
+.vscode/
+.mvn
+*.jar
+*/*.jar
+*/*/*.jar
+
+######
+output_video/
+__pycache__/
+logs/
+.log
+.idea

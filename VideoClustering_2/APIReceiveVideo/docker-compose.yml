@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  api_video_receiver:
+    build: .
+    restart: always
+    environment:
+      - MANAGER_API=${MANAGER_API}
+      - MEDIA_SERVER_API=${MEDIA_SERVER_API}
+      - ORIGINAL_VIDEO_FOLDER=${ORIGINAL_VIDEO_FOLDER}
+      - RESAMPLED_VIDEO_FOLDER=${RESAMPLED_VIDEO_FOLDER}
+      - LOGGING_FOLDER=${LOGGING_FOLDER}
+      - NUM_RETRY=${NUM_RETRY}
+      - ORIGINAL_VIDEO_TIME_ALIVE=${ORIGINAL_VIDEO_TIME_ALIVE}
+    ports:
+      - "20223:8000"
+      - "20224:8002"
+    networks:
+      - VideoClustering
+
+networks:
+  VideoClustering:
+    external: true

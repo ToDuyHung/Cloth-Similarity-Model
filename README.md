@@ -1,10 +1,17 @@
 # Cloth-Similarity-Model
-Deep Learning model for feature extractions from cloth images and its application for similarity prediction
+Deep Learning model for feature extractions from cloth images and its application for:
+
+* Similarity prediction
+
+* Video clustering
 
 ## Table of contents
 * [Dataset](#dataset)
 * [Proposed architecture](#proposed-architecture)
 * [Setup](#setup)
+* [Similarity prediction](#similarity-prediction)
+* [Video clustering](#video-clustering)
+
 
 ## Dataset: 
 
@@ -33,3 +40,52 @@ Dataset, which includes raw images and pretrained model, used in this project is
   <b>Figure 1:</b> Proposed Cloth-Similarity-Model v1.0
 </p>
 
+In detail, let's look closer to folder ./code:
+
+* To generate dataset in csv format, run the following command: 
+```bash
+  python gen_data_csv.py
+```
+
+* To train model v1.0, run the following command: 
+```bash
+  python train.py
+```
+
+File train.py use 2 classes defined in `DataModule.py` to init DataLoader and class TorchVisionClassifierTrainer in `TorchVisionClassifierTrainer.py` to define model v1.0's architecture and model v1.0's trainer.
+
+* To inference or test by categorical output with model v1.0, run the following command: 
+```bash
+  python inference.py
+```
+
+or
+
+```bash
+  python test.py
+```
+
+* To train model v2.0, run the following command: 
+```bash
+  python triplet_train.py
+```
+
+File `triplet_train.py` use 2 classes defined in `TripletDataModule.py` to init DataLoader and class TorchVisionClassifierTrainer in `TripletTrainer.py` to define model v2.0's architecture and model v2.0's trainer. In which, file `TripletTrainer.py` use class CombineModel in `CombineModel.py` to combine model v1.0's architecture with 3 
+
+* To inference or test by categorical output with model v1.0, run the following command: 
+```bash
+  python inference.py
+```
+
+or
+
+```bash
+  python test.py
+```
+
+
+## Similarity prediction
+
+## Video clustering
+
+This task is per
