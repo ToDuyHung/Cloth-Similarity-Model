@@ -40,6 +40,16 @@ Dataset, which includes raw images and pretrained model, used in this project is
   <b>Figure 1:</b> Proposed Cloth-Similarity-Model v1.0
 </p>
 
+* Version 2: Version 1.0 is quite good, however I want to improve the feature extraction more. I need the similarity of same cloths will be as high as possible and the similarity of different cloths will be as small as possible. That's the reason why I come up with version 2's idea. I freeze the last layer trained from model version 1 and used as the "backbone model" and then combine with a sequential block to reduce the output to a 256-dimension vector. My training input will be a triplet set with image anchor, image positive and image negative. In which, image positve is the same cloths and image negative is the different cloths from image anchor. Finally, the output predict of 3 images will be used to calculate the Triplet Margin Loss and backward for training model version 2.0. This is the model architecture in detail:
+
+<p align="center">
+  <img align="center" src="git_img/Cloth Model-combine_triplet.png" />
+</p>
+<p align="center">
+  <b>Figure 2:</b> Proposed Cloth-Similarity-Model v2.0
+</p>
+
+
 In detail, let's look closer to folder ./code:
 
 * To generate dataset in csv format, run the following command: 
@@ -88,4 +98,4 @@ or
 
 ## Video clustering
 
-This task is per
+This task is implemented in `VideoClustering_2` folder.
