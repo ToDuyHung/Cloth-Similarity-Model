@@ -50,7 +50,7 @@ Dataset, which includes raw images and pretrained model, used in this project is
 </p>
 
 
-In detail, let's look closer to folder ./code:
+In detail, let's look closer to folder `./code`:
 
 * To generate dataset in csv format, run the following command: 
 ```bash
@@ -93,9 +93,30 @@ or
   python test.py
 ```
 
+## Setup
+
+```
+pip install -r ./VideoClustering_2/VideoClusteringProcessing/requirement.txt
+```
 
 ## Similarity prediction
 
 ## Video clustering
 
-This task is implemented in `VideoClustering_2` folder.
+This task is implemented in folder `./VideoClustering_2`. Pipeline's config is stored as `./VideoClustering_2/VideoClusteringProcessing/config/config.py`
+
+* To run the whole pipeline, run the following command: 
+```bash
+  cd ./VideoClustering_2
+  python main.py
+```
+
+* To send video to kafka, run the following command: 
+```bash
+  python ./VideoClustering_2/VideoClusteringProcessing/misc/producer.py
+```
+
+* To save video output, run the following command: 
+```bash
+  python ./VideoClustering_2/VideoClusteringProcessing/misc/write_output.py
+```
