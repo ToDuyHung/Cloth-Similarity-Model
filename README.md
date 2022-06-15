@@ -15,7 +15,9 @@ Deep Learning model for feature extractions from cloth images and its applicatio
 
 ## Dataset: 
 
-Dataset, which includes raw images and pretrained model, used in this project is stored in this google drive link: https://drive.google.com/file/d/10e2jCu5CS7VrgNPQBzsN9U0erd4Zwr5q/view?usp=sharing
+Dataset, which includes raw images and pretrained model, used in this project is stored in this google drive link: https://drive.google.com/file/d/1JCLby8_uW9vMR5Uv-_zExOyO4K2Pk9Yc/view?usp=sharing
+
+* theme: background images for training augmentation
 
 * crop_images: dataset for training backbone model
 
