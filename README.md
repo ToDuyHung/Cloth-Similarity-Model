@@ -106,7 +106,7 @@ pip install -r ./VideoClustering_2/VideoClusteringProcessing/requirement.txt
 * Train/Test accuracy:
 
 <p align="center">
-  <img align="center" src="git_img/accuracy_v1.png" />
+  <img align="center" src="git_img/accuracy_v1.jpg" />
 </p>
 <p align="center">
   <b>Figure 3:</b> Train/Test accuracy of proposed Cloth-Similarity-Model v1.0
@@ -115,7 +115,7 @@ pip install -r ./VideoClustering_2/VideoClusteringProcessing/requirement.txt
 * Train/Test loss:
 
 <p align="center">
-  <img align="center" src="git_img/loss_v1.png" />
+  <img align="center" src="git_img/loss_v1.jpg" />
 </p>
 <p align="center">
   <b>Figure 4:</b> Train/Test loss of proposed Cloth-Similarity-Model v1.0
